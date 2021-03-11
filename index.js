@@ -7,12 +7,30 @@ function pcPlay () {
     return options[choice];
 }
 
-/* funcion que sirva para simular una ronda del juego*/
-
-function gameRound(userInput, pcPlay()) {
-
+// funcion o prompt que pida al user que elija
+function userPlay(){
+    return (prompt('choose paper, rock, or scissors')).toLowerCase()
 }
 
-// prompt que pida al user que elija
 
-userInput = prompt('choose paper, rock, or scissors')
+//funcion que sirva para simular una ronda del juego
+
+function playRound(user, pc) {
+    if (user === pc){
+        console.log('empate')
+    } else if (user === 'paper' && pc === 'rock'){
+        console.log('ganaste, papel le gana a roca')
+    } else if (user === 'paper' && pc === 'scissors'){
+        console.log('perdiste, papel pierde con tijera')
+    } else if (user === 'rock' && pc === 'paper'){
+        console.log('perdiste, roca pierde contra papel')
+    } else if (user === 'rock' && pc === 'scissors'){
+        console.log('ganaste, roca le gana a tijeras')
+    } else if (user === 'scissors' && pc === 'rock'){
+        console.log('perdiste, tijeras pierde contra roca')
+    } else {
+        console.log('ganaste, tijeras le gana a papel')
+    }
+}
+
+// el programa que corra la ronda 5 veces. 
