@@ -16,21 +16,37 @@ function userPlay(){
 //funcion que sirva para simular una ronda del juego
 
 function playRound(user, pc) {
+    let result;
     if (user === pc){
-        console.log('empate')
+        result = 'empate'
+       // console.log(result)
+        return result
     } else if (user === 'paper' && pc === 'rock'){
-        console.log('ganaste, papel le gana a roca')
+        result = 'ganaste, papel le gana a roca'
+        //console.log(result)
+        return result
     } else if (user === 'paper' && pc === 'scissors'){
-        console.log('perdiste, papel pierde con tijera')
+        result = 'perdiste, papel pierde con tijera'
+        //console.log(result)
+        return result
     } else if (user === 'rock' && pc === 'paper'){
-        console.log('perdiste, roca pierde contra papel')
+        result = 'perdiste, roca pierde contra papel'
+        //console.log(result)
+        return result
     } else if (user === 'rock' && pc === 'scissors'){
-        console.log('ganaste, roca le gana a tijeras')
+        result = 'ganaste, roca le gana a tijeras'
+       // console.log(result)
+        return result
     } else if (user === 'scissors' && pc === 'rock'){
-        console.log('perdiste, tijeras pierde contra roca')
+        result = 'perdiste, tijeras pierde contra roca'
+       // console.log(result)
+        return result
     } else {
-        console.log('ganaste, tijeras le gana a papel')
+        result = 'ganaste, tijeras le gana a papel'
+        //console.log(result)
+        return result
     }
+    
 }
 
 // el programa que corra la ronda 5 veces. 
@@ -41,21 +57,20 @@ function game() {
     
     for (let round = 0; round < 5; round++){
         if (userCount < 4 && pcCount < 4){
-           let result = playRound(userPlay(), pcPlay());
-           console.log(result);
-           
-           /*if (result.indexOf('ganaste') >= 0){
-               ++userCount
-               console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
+           let resultado = playRound(userPlay(), pcPlay());
+           console.log(resultado);
+           if (resultado.startsWith('ganaste')){
+                ++userCount
+                console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
+           } else if (resultado.startsWith('perdiste')){
+                ++pcCount
+                console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
            } else{
-               ++pcCount
-               console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
+            console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
            }
-
-        } else {
-            console.log('termino, el score es user: '+userCount+ ' pc: '+ pcCount)
-        }*/
-    } 
-}
+        } 
+    }
 
 }
+
+//game()
