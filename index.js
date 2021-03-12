@@ -34,3 +34,28 @@ function playRound(user, pc) {
 }
 
 // el programa que corra la ronda 5 veces. 
+
+function game() {
+    let userCount = 0;
+    let pcCount = 0;
+    
+    for (let round = 0; round < 5; round++){
+        if (userCount < 4 && pcCount < 4){
+           let result = playRound(userPlay(), pcPlay());
+           console.log(result);
+           
+           /*if (result.indexOf('ganaste') >= 0){
+               ++userCount
+               console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
+           } else{
+               ++pcCount
+               console.log('el score es user: '+userCount+ ' pc: '+ pcCount)
+           }
+
+        } else {
+            console.log('termino, el score es user: '+userCount+ ' pc: '+ pcCount)
+        }*/
+    } 
+}
+
+}
