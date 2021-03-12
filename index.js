@@ -70,6 +70,10 @@ function game() {
            }
         } 
     }
+    console.log('el resultado final es user: '+userCount+' pc: '+pcCount)
+    userCount === pcCount? console.log('la partida termino en empate'):
+    userCount > pcCount? console.log('ganaste la partida'):
+    console.log('perdiste la partida')
 
 }
 
